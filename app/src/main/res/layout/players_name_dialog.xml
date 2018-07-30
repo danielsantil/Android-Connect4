@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/playersDialogTextView1"
+        style="@style/PlayersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/player_1" />
+
+    <EditText
+        android:id="@+id/editTextPlayerName1"
+        style="@style/PlayersNameEditText"
+        android:layout_toEndOf="@id/playersDialogTextView1"
+        android:hint="@string/player_1" />
+
+    <TextView
+        android:id="@+id/playersDialogTextView2"
+        style="@style/PlayersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/playersDialogTextView1"
+        android:layout_below="@+id/editTextPlayerName1"
+        android:layout_marginTop="10dp"
+        android:text="@string/player_2" />
+
+    <EditText
+        android:id="@+id/editTextPlayerName2"
+        style="@style/PlayersNameEditText"
+        android:layout_below="@id/editTextPlayerName1"
+        android:layout_toEndOf="@id/playersDialogTextView2"
+        android:hint="@string/player_2" />
+
+</RelativeLayout>

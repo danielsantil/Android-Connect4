@@ -15,29 +15,22 @@
         android:paddingTop="100dp"
         android:text="@string/connect_4_title" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="30dp">
-
-        <Button
-            android:id="@+id/onePlayerButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:text="@string/one_player" />
+        android:padding="30dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/twoPlayersButton"
             android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/onePlayerButton"
-            android:text="@string/two_players" />
+            android:text="@string/play_game" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>
