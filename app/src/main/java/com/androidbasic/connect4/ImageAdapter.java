@@ -11,6 +11,46 @@ public class ImageAdapter extends BaseAdapter {
     private Context context;
     private Integer[] vectorIds = {
             R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_empty,
+            R.drawable.ic_checker_selectable,
+            R.drawable.ic_checker_selectable,
+            R.drawable.ic_checker_selectable,
+            R.drawable.ic_checker_selectable,
+            R.drawable.ic_checker_selectable,
+            R.drawable.ic_checker_selectable,
             R.drawable.ic_checker_selectable
     };
 
@@ -18,19 +58,27 @@ public class ImageAdapter extends BaseAdapter {
         this.context = context;
     }
 
+    public void setNewVector(int position, int res) {
+        vectorIds[position] = res;
+        int newAvailablePosition = position - 7;
+        if (newAvailablePosition >= 0) {
+            vectorIds[newAvailablePosition] = R.drawable.ic_checker_selectable;
+        }
+    }
+
     @Override
     public int getCount() {
-        return TwoPlayersActivity.BOARD_SIZE;
+        return Constants.BOARD_SIZE;
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return vectorIds[position];
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return vectorIds[position];
     }
 
     @Override
@@ -44,8 +92,6 @@ public class ImageAdapter extends BaseAdapter {
             imageView = (ImageView) convertView;
         }
 
-        // if position represents the last row, draw checker_selectable, else draw checker_empty
-        position = position >= 35 ? 1 : 0;
         imageView.setImageResource(vectorIds[position]);
         return imageView;
     }
