@@ -1,5 +1,7 @@
 package com.androidbasic.connect4.activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -15,7 +17,6 @@ import com.androidbasic.connect4.R;
 import com.androidbasic.connect4.adapters.ImageAdapter;
 import com.androidbasic.connect4.models.Player;
 import com.androidbasic.connect4.utils.Constants;
-import com.androidbasic.connect4.utils.Utils;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -100,9 +101,24 @@ public class TwoPlayersActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            Utils.showBackConfirmation(this);
+            onBackPressed();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        showBackConfirmation();
+    }
+
+    private void showBackConfirmation() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(TwoPlayersActivity.this);
+        builder.setTitle(getResources().getString(R.string.connect_4_title))
+                .setMessage("Are you sure you wanna run?")
+                .setPositiveButton("Sure!", (dialog, which) -> super.onBackPressed())
+                .setNegativeButton("Wait, not yet", (DialogInterface dialog, int which)
+                        -> dialog.dismiss())
+                .create().show();
     }
 
     private void chooseFirstToPlay() {
