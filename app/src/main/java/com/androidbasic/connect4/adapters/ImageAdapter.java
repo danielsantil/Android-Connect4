@@ -1,10 +1,15 @@
-package com.androidbasic.connect4;
+package com.androidbasic.connect4.adapters;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+
+import com.androidbasic.connect4.R;
+import com.androidbasic.connect4.utils.Constants;
+
+import java.util.List;
 
 public class ImageAdapter extends BaseAdapter {
 
@@ -64,6 +69,20 @@ public class ImageAdapter extends BaseAdapter {
         if (newAvailablePosition >= 0) {
             vectorIds[newAvailablePosition] = R.drawable.ic_checker_selectable;
         }
+        notifyDataSetChanged();
+    }
+
+    public void setWinner(List<Integer> positions, int color) {
+        for (int i = 0; i < vectorIds.length; i++) {
+            if (vectorIds[i] == R.drawable.ic_checker_selectable) {
+                vectorIds[i] = R.drawable.ic_checker_empty;
+                continue;
+            }
+            if (positions.contains(i)) {
+                vectorIds[i] = Constants.checkers.get(color);
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @Override

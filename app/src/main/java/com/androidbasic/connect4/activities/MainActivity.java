@@ -1,4 +1,4 @@
-package com.androidbasic.connect4;
+package com.androidbasic.connect4.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+
+import com.androidbasic.connect4.R;
+import com.androidbasic.connect4.utils.Constants;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

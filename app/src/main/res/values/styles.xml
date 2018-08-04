@@ -14,6 +14,11 @@
         <item name="android:textColor">@android:color/holo_blue_dark</item>
     </style>
 
+    <style name="WinnerText">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="PlayersTextView">
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>

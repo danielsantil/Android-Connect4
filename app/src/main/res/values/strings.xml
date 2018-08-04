@@ -8,4 +8,6 @@
     <string name="start_game">Start</string>
     <string name="play_game">Play!</string>
     <string name="turn_chooser">Turn chooser</string>
+    <string name="winner">Winner:</string>
+    <string name="restart">Restart</string>
 </resources>
